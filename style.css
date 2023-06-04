@@ -1,0 +1,20 @@
+.list {
+  display: flex;
+  list-style: none;
+}
+
+.item {
+  border: 2px solid aqua;
+}
+
+.text {
+  color: blue;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.item-style {
+  margin-right: 30px;
+}
