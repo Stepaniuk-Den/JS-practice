@@ -1423,15 +1423,15 @@ const instruments = [
 // listContainer.append(...markUp);
 
 //===== 2nd metod ======================================
-const listContainer = document.querySelector(".js-list");
-const markup = instruments
-  .map(
-    ({ img, name, price }) =>
-      `<li class="item item-style">
-    <img class="" src="${img}" alt="${name}" width="300">
-    <h2 class="title">${name}</h2>
-    <span class="text">${price}</span>
-</li>`
-  )
-  .join("");
-listContainer.insertAdjacentHTML("afterbegin", markup);
+// const listContainer = document.querySelector(".js-list");
+// const markup = instruments
+//   .map(
+//     ({ img, name, price }) =>
+//       `<li class="item item-style">
+//     <img class="" src="${img}" alt="${name}" width="300">
+//     <h2 class="title">${name}</h2>
+//     <span class="text">${price}</span>
+// </li>`
+//   )
+//   .join("");
+// listContainer.insertAdjacentHTML("afterbegin", markup);
