@@ -1367,26 +1367,26 @@
 
 //================================================
 // Потрібно створити картки продуктів
-const instruments = [
-  {
-    id: 1,
-    img: "https://static.dnipro-m.ua/cache/products/1754/catalog_origin_261194.jpg",
-    name: "Молоток",
-    price: 150,
-  },
-  {
-    id: 2,
-    img: "https://static.dnipro-m.ua/cache/products/5587/catalog_origin_190742.jpg",
-    name: "Перфоратор",
-    price: 3000,
-  },
-  {
-    id: 3,
-    img: "https://static.dnipro-m.ua/cache/products/2299/catalog_origin_261034.jpg",
-    name: "Рівень",
-    price: 2000,
-  },
-];
+// const instruments = [
+//   {
+//     id: 1,
+//     img: "https://static.dnipro-m.ua/cache/products/1754/catalog_origin_261194.jpg",
+//     name: "Молоток",
+//     price: 150,
+//   },
+//   {
+//     id: 2,
+//     img: "https://static.dnipro-m.ua/cache/products/5587/catalog_origin_190742.jpg",
+//     name: "Перфоратор",
+//     price: 3000,
+//   },
+//   {
+//     id: 3,
+//     img: "https://static.dnipro-m.ua/cache/products/2299/catalog_origin_261034.jpg",
+//     name: "Рівень",
+//     price: 2000,
+//   },
+// ];
 //=== 1st metod ======================================
 // const listContainer = document.querySelector(".js-list");
 
@@ -1435,3 +1435,323 @@ const instruments = [
 //   )
 //   .join("");
 // listContainer.insertAdjacentHTML("afterbegin", markup);
+//====================================================
+// const cars = [
+//   {
+//     model: "Honda",
+//     type: "Civic",
+//     price: 12000,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
+//   },
+//   {
+//     model: "Audi",
+//     type: "Q7",
+//     price: 40000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
+//   },
+//   {
+//     model: "BMW",
+//     type: "5 siries",
+//     price: 9000,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
+//   },
+//   {
+//     model: "Honda",
+//     type: "Accord",
+//     price: 20000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
+//   },
+//   {
+//     model: "Volvo",
+//     type: "XC60",
+//     price: 7000,
+//     img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
+//   },
+// ];
+// const carForm = document.querySelector(".js-form");
+// const carList = document.querySelector(".js-card-list");
+
+// function createMarkup(arr) {
+//   const markup = arr.map(
+//     ({ model, type, price, img }) =>
+//       `<li>
+//   <h2>${model}</h2>
+//   <h3>${type}</h3>
+//   <img src="${img}" alt="${type}" width=300px>
+//   <p>${price}</p>
+// </li>`
+//   );
+//   return markup.join("");
+// }
+
+// createMarkup(cars);
+// carList.insertAdjacentHTML("afterbegin", createMarkup(cars));
+
+// carForm.addEventListener("submit", handlerSubmitForm);
+
+// function handlerSubmitForm(evt) {
+//   evt.preventDefault();
+//   console.log(evt.currentTarget);
+//   console.dir(evt.currentTarget.elements);
+//   const { query, type } = evt.currentTarget.elements;
+//   const key = type.value;
+//   const inputValue = query.value;
+//   const searchCars = cars.filter((el) => {
+//     return el[key].toLowerCase() === inputValue.toLowerCase();
+//   });
+//   carList.innerHTML = createMarkup(searchCars);
+// }
+//=============================================
+
+//Відмалювати картки з продуктами.
+//До кожної картки додати кнопку купити.
+//Після кліку на дану кнопку в консолі відобразити об'єкт покупки в масиві.
+
+// 1.Перебрати даний масив
+// 2.На кожній ітерації за допомогою мар() створити шаблон однієї картки
+// 2.1.li data-id >img+h2+p+button 'Buy' class "js-add"
+// 3.Об'єднати за допомогою join() в рядок
+// 4.Створити контейнер в html (ul), отримати його в js, за класом
+// 5.Додати розмітку у контейнер
+// 6.Додаємо прослуховувач на контейнер по кліку на співпадіння класу і події
+// 7.Витягнути id з кнопки по якій клікаємо
+// 8.Співставити id з об'єктами заданого масиву, створити новий масив та перемістити його до нового масиву
+// 9.Вивести у консоль
+
+// const instruments = [
+//   {
+//     id: 1,
+//     img: "https://static.dnipro-m.ua/cache/products/1754/catalog_origin_261194.jpg",
+//     name: "Молоток",
+//     price: 150,
+//   },
+//   {
+//     id: 2,
+//     img: "https://static.dnipro-m.ua/cache/products/5587/catalog_origin_190742.jpg",
+//     name: "Перфоратор",
+//     price: 3000,
+//   },
+//   {
+//     id: 3,
+//     img: "https://static.dnipro-m.ua/cache/products/2299/catalog_origin_261034.jpg",
+//     name: "Рівень",
+//     price: 2000,
+//   },
+// ];
+// const newInstruments = instruments
+//   .map(
+//     ({ id, img, name, price }) =>
+//       `<li data-id="${id}">
+// <img src="${img}" alt="${name}" width=300px />
+// <h2>${name}</h2>
+// <p>${price}</p>
+// <button class="js-add" type="button">Buy</button>
+// </li>`
+//   )
+//   .join("");
+// const cardList = document.querySelector(".card-list");
+// cardList.insertAdjacentHTML("afterbegin", newInstruments);
+// cardList.addEventListener("click", handlerCardListClick);
+
+// const basket = [];
+
+// function handlerCardListClick(evt) {
+//   if (!evt.target.classList.contains("js-add")) {
+//     return;
+//   }
+//   const eventCurrentLi = evt.target.closest("li");
+//   const productId = eventCurrentLi.dataset.id;
+//   const findId = instruments.find(({ id }) => {
+//     return id === Number(productId);
+//   });
+//   basket.push(findId);
+//   console.log(basket);
+// }
+//===========================================================
+
+// Відмалювати картки авто, базова стилізація карток(по три в рядку).
+// Делегування на список.
+// При кліку на картку необхідно відкрити модальне вікно з детальною інфо по авто.
+
+// План дій
+// 1. Додати контейнер для списку.
+// 2. Ініціалізувати цей список в JS.
+// 3. Створити розмітку картки(карток) з класами за допомогою методу Map та шаблонних рядків.
+// 3.1.Вміст картки: зображення та марку авто.
+// 4. Додати розмітку в список в html.
+// 5. Додати стилізацію карток.
+// 6. Додати прослуховувача на список на подію клік.
+// 7. Делегувати подію по кліку на пункт списку.
+// 8. Додати необхідну бібліотеку basicLightbox.
+// 9. Створити модальне вікно, з можливістю його запуску по кліку на пункт списку.
+// 10. Додати в модальне вікно повну інформацію по авто.
+// const cars = [
+//   {
+//     brand: "Honda",
+//     model: "Civic",
+//     id: 1,
+//     price: 12000,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTCOHzdE-dK6WK7ax8NzQolTcCWA_jhJD-CRGWfqKJIJuGs8ML_-OyiDwzsdC8jOi_K10&usqp=CAU",
+//   },
+//   {
+//     brand: "BMW",
+//     model: "X5",
+//     id: 2,
+//     price: 19000,
+//     img: "https://i.infocar.ua/img/mats/11150/ins/1614846802162.jpg",
+//   },
+//   {
+//     brand: "Audi",
+//     model: "Q7",
+//     id: 3,
+//     price: 40000,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/8/8b/2017_Audi_Q7_S_Line_Quattro_3.0_Front.jpg",
+//   },
+//   {
+//     brand: "BMW",
+//     model: "5 siries",
+//     price: 9000,
+//     id: 4,
+//     img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUH96e58ynLO8SXMsFTNYkJci79eAZ8CyqcZsZ8snvzz2sfLl3Ojd1BQoaWBcrMKWvSYc&usqp=CAU",
+//   },
+//   {
+//     brand: "Audi",
+//     model: "A6",
+//     id: 5,
+//     price: 25000,
+//     img: "https://i.gaw.to/vehicles/photos/40/28/402805-2022-audi-a6.jpg?640x400",
+//   },
+//   {
+//     brand: "Honda",
+//     tymodelpe: "Accord",
+//     price: 20000,
+//     id: 6,
+//     img: "https://upload.wikimedia.org/wikipedia/commons/7/76/2021_Honda_Accord_Sport_%28facelift%29%2C_front_11.30.21.jpg",
+//   },
+//   {
+//     brand: "Volvo",
+//     model: "XC60",
+//     price: 7000,
+//     id: 7,
+//     img: "https://www.volvocars.com/media/shared-assets/master/images/pages/my19/xc60-my19/accessories/xc60my19_accessories_exteriorfeature2_1.jpg?w=320",
+//   },
+//   {
+//     brand: "Audi",
+//     model: "RSQ8",
+//     id: 8,
+//     price: 180000,
+//     img: "https://static.apostrophe.ua/uploads/image/7a832f54750de46acc3269ef2e0d8b26.jpg",
+//   },
+// ];
+
+// const listAllAuto = document.querySelector(".js-list");
+
+// const markupAutoList = cars
+//   .map(
+//     ({ brand, model, img, id }) =>
+//       `<li class="item" data-id="${id}"><img src="${img}" alt="${model}" width='300'><h2>${brand}</h2></li>`
+//   )
+//   .join("");
+// listAllAuto.insertAdjacentHTML("afterbegin", markupAutoList);
+// listAllAuto.addEventListener("click", handlerOpenModal);
+
+// function handlerOpenModal(evt) {
+//   if (evt.target === evt.currentTarget) {
+//     return;
+//   }
+//   const idAuto = evt.target.closest("li").dataset.id;
+//   const currentAuto = cars.find(({ id }) => id === Number(idAuto));
+//   const { brand, model, price, img } = currentAuto;
+//   const modalAuto = basicLightbox.create(`
+//     <div style="background-color:#fff" >
+//     <img width="400"
+//     src="${img}"
+//     alt="${brand}"
+//     />
+//     <h2>${brand}</h2>
+//     <h3>${model}</h3>
+//     <p>${price}</p>
+// </div>
+// `);
+//   modalAuto.show();
+// }
+// const contentElem = document.querySelector(".content");
+// const btnRestart = document.querySelector(".button");
+
+// btnRestart.addEventListener("click", handlerRestart);
+// contentElem.addEventListener("click", handlerClick);
+
+// const KEY_LS_X = "History X";
+// const KEY_LS_O = "History O";
+// const KEY_LS_CURRENT_PLAYER = "Current Player";
+
+// const historyX = JSON.parse(localStorage.getItem(KEY_LS_X)) ?? [];
+// const historyO = JSON.parse(localStorage.getItem(KEY_LS_O)) ?? [];
+// let player = localStorage.getItem(KEY_LS_CURRENT_PLAYER) ?? "X";
+
+// function createMarkup() {
+//   let markup = "";
+//   for (let i = 1; i <= 9; i += 1) {
+//     markup += `<div class="item" data-id="${i}"></div>`;
+//   }
+//   contentElem.innerHTML = markup;
+//   // contentElem.insertAdjacentHTML("afterbegin", markup);
+// }
+// createMarkup();
+
+// function continueGame() {
+//   for (const item of contentElem.children) {
+//     if (historyX.includes(item.dataset.id)) {
+//       item.textContent = "X";
+//     } else if (historyO.includes(item.dataset.id)) {
+//       item.textContent = "O";
+//     }
+//   }
+// }
+// continueGame();
+
+// function handlerClick(evt) {
+//   if (evt.target === evt.currentTarget || evt.target.textContent) {
+//     //!evt.target.classList.contains("item")
+//     return;
+//   }
+//   evt.target.textContent = player;
+//   const id = evt.target.dataset.id;
+//   if (player === "X") {
+//     historyX.push(id); // подія Х
+//     localStorage.setItem(KEY_LS_X, JSON.stringify(historyX));
+//   } else {
+//     historyO.push(id); // подія О
+//     localStorage.setItem(KEY_LS_O, JSON.stringify(historyO));
+//   }
+
+//   player = player === "X" ? "O" : "X";
+//   localStorage.setItem(KEY_LS_CURRENT_PLAYER, player);
+// }
+
+// function handlerRestart() {
+//   createMarkup();
+//   player = "X";
+//   localStorage.removeItem(KEY_LS_X);
+//   localStorage.removeItem(KEY_LS_O);
+//   localStorage.removeItem(KEY_LS_CURRENT_PLAYER);
+//   historyX.splice(0, historyX.length);
+//   historyO.splice(0, historyO.length);
+// }
+
+//==============================================
+
+// TASK-1
+//  напиши функцію яка буде створювати масив з не унікальних значень в масиві, які є в тестових масивах, якщо немаэ не уныкальних повертаэ пустий масив
+// const arr1 = [1, 2]; //[]
+// const arr2 = [2, 3, 2]; //[2]
+// const arr3 = ["a", "b"]; //[]
+// const arr4 = ["b", "c"]; //[]
+// const arr5 = ["b", "e", "c"]; //[]
+// const arr6 = ["b", "b", "e"]; //[b]
+
+// function createArr(array) {
+//   const uniqArr = array.filter((el, idx, arr) => arr.indexOf(el) !== idx);
+//   console.log(uniqArr);
+// }
+// createArr(arr6);

@@ -5,10 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="clock.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css"
+    />
     <title>01-practice</title>
   </head>
   <body>
-    <ul class="js-list list"></ul>
+    <!-- CLOCK -->
+    <div class="calendar">
+      <div class="date-style">
+        День тижня:
+        <div class="date-day">0</div>
+      </div>
+      <div class="date-style">
+        День місяця:
+        <div class="date">0</div>
+      </div>
+      <div class="date-style">
+        Місяць:
+        <div class="date-month">0</div>
+      </div>
+      <div class="date-style">
+        Рік:
+        <div class="date-year">0</div>
+      </div>
+    </div>
+
+    <div class="digital-clock">0</div>
+    <div class="clock">
+      <div class="clock-arrow clock-seconds__arrow"></div>
+      <div class="clock-arrow clock-minutes__arrow"></div>
+      <div class="clock-arrow clock-hours__arrow"></div>
+      <div class="clock-center"></div>
+    </div>
+    <!-- // CLOCK -->
+    <!-- X-O -->
+    <!-- <button class="button">Restart</button>
+    <div class="container">
+      <div class="content"></div>
+    </div> -->
+    <!-- // X-O -->
+    <script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>
     <script src="./js/01-practice.js"></script>
+    <script src="./js/09-practice-clock.js"></script>
   </body>
 </html>
