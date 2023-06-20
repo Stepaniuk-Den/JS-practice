@@ -1868,6 +1868,7 @@
 //   evt.preventDefault();
 //   const userCity = evt.currentTarget.elements.city.value;
 //   const userDays = evt.currentTarget.elements.days.value;
+//   console.log(serviceWeather(userCity, userDays));
 //   serviceWeather(userCity, userDays)
 //     .then((data) => {
 //       refs.container.innerHTML = createMarkup(data.forecast.forecastday);
