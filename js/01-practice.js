@@ -1675,6 +1675,7 @@
 // `);
 //   modalAuto.show();
 // }
+//===========================================================
 // const contentElem = document.querySelector(".content");
 // const btnRestart = document.querySelector(".button");
 
@@ -1845,7 +1846,7 @@
 
 //== Weather ====================================
 
-// BASE_URL = "http://api.weatherapi.com/v1/forecast.json";
+// const BASE_URL = "http://api.weatherapi.com/v1/forecast.json";
 
 // const refs = {
 //   form: document.querySelector(".js-form"),

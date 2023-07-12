@@ -9,7 +9,7 @@
 // const API_KEY = "345007f9ab440e5b86cef51be6397df1";
 // const IMG_PATH = "https://image.tmdb.org/t/p/w400";
 // const lists = document.querySelector(".js-films");
-// // const btnLoad = document.querySelector(".js-btn");
+// const btnLoad = document.querySelector(".js-btn");
 
 // let page = 1;
 
@@ -76,6 +76,7 @@ function serviceMovies(page = 1) {
 }
 
 serviceMovies().then((data) => {
+  console.log(data);
   lists.insertAdjacentHTML("beforeend", createMarkup(data.results));
   observer.observe(guard);
 });
